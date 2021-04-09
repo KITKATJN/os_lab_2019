@@ -1,5 +1,5 @@
 gcc -fPIC -c revert_string.c
-gcc -shared -o librevert_string.so revert_string.o
+gcc -shared revert_string.o -o librevert_string.so
 
 gcc -c revert_string.c
 ar rc librevert_string.a revert_string.o

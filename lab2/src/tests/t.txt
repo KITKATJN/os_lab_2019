@@ -1,0 +1,2 @@
+gcc tests.c librevert_string.a -lcunit && ./a.out
+gcc tests.c -lrevert_string -lcunit && ./a.out
