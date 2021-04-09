@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
   int seed = atoi(argv[1]);
   if (seed <= 0) {
-    printf("seed is a positive number\n");
+    printf("seed is a positive number\n"); // seed начально число которое будет использоваться в качестве начального числа алгоритмом генератора псевдослучайных чисел.
     return 1;
   }
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
   struct MinMax min_max = GetMinMax(array, 0, array_size);
   free(array);
 
-  printf("min: %d\n", min_max.min);
+  printf("\nmin: %d\n", min_max.min);
   printf("max: %d\n", min_max.max);
 
   return 0;
