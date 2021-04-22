@@ -11,15 +11,15 @@
 
 int sum_array(int* array, int begin, int end) {
   int sum = 0;
-  //int i = 0;
-  // while (begin + i <= end)
-  // {
-    //printf("arr = %d begin = %d end = %d\n", array[i], begin, end);
-    sum += array[begin];
+  int i;
+  for(i = begin; i <= end; i++)
+  {
 
+	sum += array[i];
+
+  }
   return sum;
 }
-
 
 struct SumArgs {
   int *array;
@@ -113,9 +113,6 @@ while (true) {
 
   int *array = (int*)malloc(sizeof(int) * array_size);
   GenerateArray(array, array_size, seed);
-  // int ip = 0;
-  // while (ip < array_size)
-  //   printf("arr check = %d\n", array[ip++]);
   int sizeforthread= threads_num<=array_size ? (array_size/threads_num) : 1;
   pthread_t threads[threads_num];
 
@@ -137,13 +134,13 @@ while (true) {
 
      args[i].begin=sizeforthread*i;
      args[i].end=args[i].begin+sizeforthread-1;
-//printf("arr = %d cbegin = %d cend = %d\n", array[i], args[i].begin, args[i].end);
+
      if(i==threads_num-1)
 	   args[i].end=array_size-1;
      args[i].array=array;
-    //printf("check i = %d\n", i);
+
       if (pthread_create(&threads[i], NULL, ThreadSum, (void *)&args[i])) {
-        printf("Error: pthread_create failed!\n");
+      printf("Error: pthread_create failed!\n");
       return 1;
     }
 
