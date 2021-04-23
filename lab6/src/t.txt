@@ -1,0 +1,4 @@
+./server --port "20001" --tnum "4"
+sudo lsof -i -P | grep *20001
+./client --k 1000 --mod 5 --servers '/home/cmarguer/os_lab_2019/lab6/src/file.txt'
+
