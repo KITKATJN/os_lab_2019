@@ -1,0 +1,5 @@
+gcc tcpclient.c -D BUFSIZE=100
+./tcpclient 127.0.0.1 10050
+sudo lsof -i -P
+
+sudo ss -tulpn
